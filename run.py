@@ -2,7 +2,7 @@ from app import routes  # Assuming your Flask app is defined in `app.py` or simi
 from flask_frozen import Freezer
 
 # Initialize the Freezer object
-freezer = Freezer(app)
+freezer = Freezer(routes)
 
 # This will generate static files
 if __name__ == "__main__":
