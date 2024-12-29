@@ -1,9 +1,12 @@
-from app import app  # Assuming your Flask app is defined in `app.py` or similar
-from flask_frozen import Freezer
+from flask import render_template
+from app import create_app
 
-# Initialize the Freezer object
-freezer = Freezer(app)
+app = create_app()
 
-# This will generate static files
-if __name__ == "__main__":
-    freezer.freeze()  # Generates the static site files in the `build/` directory
+@app.route('/')
+def home():
+    return render_template('home.html', title='Home')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html', title='Contact')
