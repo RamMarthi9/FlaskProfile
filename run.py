@@ -1,6 +1,9 @@
-from app import create_app
+from app import app  # Assuming your Flask app is defined in `app.py` or similar
+from flask_frozen import Freezer
 
-app = create_app()
+# Initialize the Freezer object
+freezer = Freezer(app)
 
+# This will generate static files
 if __name__ == "__main__":
-    app.run(debug=True)
+    freezer.freeze()  # Generates the static site files in the `build/` directory
