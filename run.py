@@ -1,4 +1,4 @@
-from app import app  # Assuming your Flask app is defined in `app.py` or similar
+from app import routes  # Assuming your Flask app is defined in `app.py` or similar
 from flask_frozen import Freezer
 
 # Initialize the Freezer object
